@@ -1,0 +1,26 @@
+
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-items {
+    list-style: none;
+    display: flex;
+    min-height: 100px;
+    height: 10vh;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.navbar-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.navbar-items > .navbar-item:first-child {
+    margin-right: auto;
+}

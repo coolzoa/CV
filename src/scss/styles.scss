@@ -1,0 +1,12 @@
+
+@import "./vendor/normalize";
+@import "./reset.local";
+@import "./utilities";
+@import "navbar";
+@import "section";
+
+html {
+    font-family: sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}

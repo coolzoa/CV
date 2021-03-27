@@ -1,0 +1,30 @@
+
+//Local reset for user agent styles
+
+// Give box-sizing to all elements
+*,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2 {
+    margin: 0;
+    font-size: inherit;
+}
+
+p {
+    margin: 0;
+}
