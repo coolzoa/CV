@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "CV website",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coolzoa/CV.git"
@@ -16,5 +13,13 @@
   "bugs": {
     "url": "https://github.com/coolzoa/CV/issues"
   },
-  "homepage": "https://github.com/coolzoa/CV#readme"
+  "homepage": "https://github.com/coolzoa/CV#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  }
 }
