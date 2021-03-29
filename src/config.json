@@ -1,0 +1,17 @@
+
+{
+    "baseDir": "./src",
+    "html": {
+        "index": "./src/index.html",
+        "src": "./src/*.html",
+        "build": "./"
+    },
+    "sass": {
+        "src": "./src/scss/**/*.scss",
+        "dest": "./src/css"
+    },
+    "css": {
+        "src": "./src/css/*.css",
+        "dest": "./css"
+    }
+}
