@@ -1,12 +1,23 @@
 
 //Local reset for user agent styles
+@import "./variables";
 
-// Give box-sizing to all elements
+// Give box-sizing to all elements to respect height and width
 *,
-  *::after,
-  *::before {
+*::after,
+*::before {
     box-sizing: border-box;
   }
+
+  //reset font-size to use your default size
+  html {
+    font-family: $font;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+
+//apply reset to the elements you are going to use and their default size
 
 a {
     text-decoration: none;
