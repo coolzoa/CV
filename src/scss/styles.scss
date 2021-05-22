@@ -6,7 +6,9 @@
 @import "section";
 
 html {
-    font-family: sans-serif;
-    font-size: 16px;
     scroll-behavior: smooth;
+}
+
+body, html {
+    height: 100%;
 }
