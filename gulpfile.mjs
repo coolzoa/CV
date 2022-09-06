@@ -38,12 +38,13 @@ const compileSass = () => {
         .pipe(gulp.dest(path.join(paths.src, 'css'), { sourcemaps: '.'}))
 }
 
+/**
+ * Minify CSS files
+ */
 const minifyCss = () => {
     return gulp.src(path.join(paths.src, 'css', '*.css'))
         .pipe(gulpCleanCss({ compatibility: 'ie8' }))
         .pipe(gulp.dest(path.join(paths.dist, 'css')))
-
-
 }
 
 //=====Gulp main tasks=====
