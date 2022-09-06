@@ -23,6 +23,7 @@ const sass = gulpSass(dartSass);
 const paths = {
     src: 'src',
     dist: 'dist',
+    vendor: 'vendor'
 }
 
 /**
@@ -63,6 +64,14 @@ const minifyJs = () => {
         .pipe(gulp.dest(path.join(paths.dist, 'js')))
 }
 
+/**
+ * Vendor files
+ */
+const buildVendorFiles = () => {
+    return gulp.src(path.join(paths.src, paths.vendor, '**', '*'))
+        .pipe(gulp.dest(path.join(paths.dist, 'vendor')))
+}
+
 //=====Gulp main tasks=====
 
 /**
@@ -70,5 +79,5 @@ const minifyJs = () => {
  */
 export const build = gulp.series(
   gulp.parallel(compileSass, compileJs),
-  gulp.parallel(minifyCss, minifyJs)
+  gulp.parallel(minifyCss, minifyJs, buildVendorFiles)
 );
