@@ -10,7 +10,7 @@ import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
 import babel from 'gulp-babel';
 import sourceMap from 'gulp-sourcemaps';
-import glob from 'glob';
+import htmlMin from 'gulp-htmlmin';
 
 /**
  * Native dependencies
@@ -65,6 +65,15 @@ const minifyJs = () => {
 }
 
 /**
+ * Minify HTML files
+ */
+const minifyHtml = () => {
+    return gulp.src(path.join(paths.src, '*.html'))
+        .pipe(htmlMin({ removeComments: true, collapseWhitespace: true }))
+        .pipe(gulp.dest(path.join(paths.dist)))
+}
+
+/**
  * Vendor files
  */
 const buildVendorFiles = () => {
@@ -79,5 +88,5 @@ const buildVendorFiles = () => {
  */
 export const build = gulp.series(
   gulp.parallel(compileSass, compileJs),
-  gulp.parallel(minifyCss, minifyJs, buildVendorFiles)
+  gulp.parallel(minifyCss, minifyJs, buildVendorFiles, minifyHtml)
 );
