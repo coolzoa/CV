@@ -81,6 +81,14 @@ const buildVendorFiles = () => {
         .pipe(gulp.dest(path.join(paths.dist, 'vendor')))
 }
 
+/**
+ * media files
+ */
+const minifyMediaFiles = () => {
+    return gulp.src(path.join(paths.src, 'public', 'img', '*'))
+        .pipe(gulp.dest(path.join(paths.dist, 'public', 'img')))
+}
+
 //=====Gulp main tasks=====
 
 /**
@@ -88,5 +96,5 @@ const buildVendorFiles = () => {
  */
 export const build = gulp.series(
   gulp.parallel(compileSass, compileJs),
-  gulp.parallel(minifyCss, minifyJs, buildVendorFiles, minifyHtml)
+  gulp.parallel(minifyCss, minifyJs, buildVendorFiles, minifyHtml, minifyMediaFiles)
 );
