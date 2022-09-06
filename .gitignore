@@ -3,3 +3,7 @@
 
 #Dependency directories
 node_modules/
+
+#Intermediate build directories
+src/css/
+src/js/
