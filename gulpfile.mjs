@@ -23,8 +23,6 @@ const sass = gulpSass(dartSass);
 const paths = {
     src: 'src',
     dist: 'dist',
-    js: 'js',
-    css: 'css'
 }
 
 /**
@@ -47,12 +45,30 @@ const minifyCss = () => {
         .pipe(gulp.dest(path.join(paths.dist, 'css')))
 }
 
+/**
+ * Compile custom JavaScript files
+ */
+const compileJs = () => {
+    return gulp.src(path.join(paths.src, 'scripts', '**', '*.js'))
+        .pipe(babel({ presets: ['@babel/env'] }))
+        .pipe(gulp.dest(path.join(paths.src, 'js')))
+}
+
+/**
+ * Minify custom JavaScript files
+ */
+const minifyJs = () => {
+    return gulp.src(path.join(paths.src, 'js', '*.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.join(paths.dist, 'js')))
+}
+
 //=====Gulp main tasks=====
 
 /**
  * Build assets for deployment
  */
 export const build = gulp.series(
-  gulp.parallel(compileSass),
-  gulp.parallel(minifyCss)
+  gulp.parallel(compileSass, compileJs),
+  gulp.parallel(minifyCss, minifyJs)
 );
