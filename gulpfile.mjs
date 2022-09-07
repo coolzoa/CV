@@ -22,7 +22,7 @@ const sass = gulpSass(dartSass);
 
 const paths = {
     src: 'src',
-    dist: 'dist',
+    dist: 'docs',
     vendor: 'vendor'
 }
 
